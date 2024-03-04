@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="output"></h1>
+    <h1 id="numbers"></h1>
+    <h1 id="date"></h1>
+
+    <script>
+        var random = Math.floor(Math.random()*1001);
+        var randomstring = random.toString();
+        var date = new Date();
+
+        document.getElementById("output").innerHTML = "Randomly generated number:".concat(" ", random);
+        
+        if (random>10 && random<100)
+        {
+            var tens = randomstring.charAt(0)*10;
+            var ones = randomstring.charAt(1)*1;
+
+            
+
+            document.getElementById("numbers").innerHTML = "Breakdown:".concat(" ", tens, " ", ones);
+            document.getElementById("date").innerHTML = date;
+        }
+        else if (random<10)
+        {
+            var ones = randomstring.charAt(0)*1;
+
+            document.getElementById("numbers").innerHTML = "Breakdown:".concat(" ", ones);
+            document.getElementById("date").innerHTML = date;
+        }
+        else 
+        {
+            var hundreds = randomstring.charAt(0)*100;
+            var tens = randomstring.charAt(1)*10;
+            var ones = randomstring.charAt(2)*1;
+
+            document.getElementById("numbers").innerHTML = "Breakdown:".concat(" ", hundreds, " ", tens, " ", ones);
+            document.getElementById("date").innerHTML = date;
+        }
+    </script>
+</body>
+</html>
